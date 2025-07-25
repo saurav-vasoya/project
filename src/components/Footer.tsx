@@ -138,7 +138,7 @@ const Footer = () => {
 
         {/* Newsletter signup */}
         <motion.div
-          className="bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-8 mb-12 shadow-sm"
+          className="glass-card-strong border border-blue-100 rounded-2xl p-8 mb-12 shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -155,7 +155,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-blue-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="flex-1 px-4 py-3 rounded-lg border border-blue-200 glass-card focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-md"
               />
               <motion.button
                 className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
@@ -195,7 +195,7 @@ const Footer = () => {
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  className="p-2 bg-white rounded-lg shadow-md hover:shadow-lg text-slate-600 hover:text-blue-600 transition-all duration-300"
+                  className="p-2 glass-card rounded-lg shadow-md hover:glass-card-strong hover:shadow-lg text-slate-600 hover:text-blue-600 transition-all duration-300"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label={social.label}

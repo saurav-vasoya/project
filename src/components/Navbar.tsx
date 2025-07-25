@@ -41,7 +41,7 @@ const Navbar = () => {
     <motion.nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/80 backdrop-blur-xl shadow-lg border-b border-blue-100' 
+          ? 'glass-navbar shadow-lg' 
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -107,7 +107,7 @@ const Navbar = () => {
         initial={false}
         animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-white/90 backdrop-blur-xl border-b border-blue-100"
+        className="md:hidden overflow-hidden glass-navbar border-b border-white/20"
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navItems.map((item, index) => (

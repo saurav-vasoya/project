@@ -13,7 +13,22 @@ import {
   Clock,
   CheckCircle,
   Play,
-  Quote
+  Quote,
+  Code,
+  Palette,
+  Smartphone,
+  Globe,
+  Target,
+  Lightbulb,
+  Rocket,
+  Coffee,
+  Heart,
+  Monitor,
+  Database,
+  Settings,
+  BarChart3,
+  Layers,
+  Cpu
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -112,42 +127,50 @@ const Home = () => {
     {
       icon: Star,
       title: 'Award-Winning Design',
-      description: 'Stunning, user-centric designs that have won multiple industry awards and recognition'
+      description: 'Stunning, user-centric designs that have won multiple industry awards and recognition',
+      color: 'from-yellow-400 to-orange-500'
     },
     {
       icon: TrendingUp,
       title: 'Performance Optimized',
-      description: 'Lightning-fast loading times with 99.9% uptime and seamless user experiences'
+      description: 'Lightning-fast loading times with 99.9% uptime and seamless user experiences',
+      color: 'from-green-400 to-blue-500'
     },
     {
       icon: Users,
       title: 'User-Centered Approach',
-      description: 'Research-driven designs that prioritize user needs and deliver exceptional experiences'
+      description: 'Research-driven designs that prioritize user needs and deliver exceptional experiences',
+      color: 'from-purple-400 to-pink-500'
     },
     {
       icon: Award,
       title: 'Enterprise Quality',
-      description: 'Production-ready solutions built with industry best practices and rigorous testing'
+      description: 'Production-ready solutions built with industry best practices and rigorous testing',
+      color: 'from-blue-400 to-indigo-500'
     },
     {
       icon: Zap,
       title: 'Cutting-Edge Tech',
-      description: 'Latest technologies and frameworks to keep you ahead of the competition'
+      description: 'Latest technologies and frameworks to keep you ahead of the competition',
+      color: 'from-cyan-400 to-blue-500'
     },
     {
       icon: Shield,
       title: 'Security First',
-      description: 'Bank-level security measures to protect your data and user information'
+      description: 'Bank-level security measures to protect your data and user information',
+      color: 'from-red-400 to-pink-500'
     },
     {
       icon: Clock,
       title: 'Fast Delivery',
-      description: 'Agile development process ensuring timely delivery without compromising quality'
+      description: 'Agile development process ensuring timely delivery without compromising quality',
+      color: 'from-indigo-400 to-purple-500'
     },
     {
       icon: CheckCircle,
       title: 'Proven Results',
-      description: 'Track record of successful projects with measurable business impact'
+      description: 'Track record of successful projects with measurable business impact',
+      color: 'from-emerald-400 to-teal-500'
     }
   ];
 
@@ -163,19 +186,61 @@ const Home = () => {
       name: 'Sarah Johnson',
       role: 'CEO, TechStart Inc.',
       content: 'MotionWeb transformed our digital presence completely. The animations and user experience are phenomenal.',
-      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150'
+      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150',
+      rating: 5,
+      company: 'TechStart Inc.'
     },
     {
       name: 'Michael Chen',
       role: 'CTO, InnovateLab',
       content: 'Outstanding technical expertise and creative vision. They delivered beyond our expectations.',
-      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150'
+      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150',
+      rating: 5,
+      company: 'InnovateLab'
     },
     {
       name: 'Emily Rodriguez',
       role: 'Marketing Director, GrowthCo',
       content: 'The team\'s attention to detail and commitment to excellence is unmatched in the industry.',
-      avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150'
+      avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
+      rating: 5,
+      company: 'GrowthCo'
+    }
+  ];
+
+  const technologies = [
+    { name: 'React', icon: Code, description: 'Modern UI library' },
+    { name: 'TypeScript', icon: Cpu, description: 'Type-safe development' },
+    { name: 'Next.js', icon: Layers, description: 'Full-stack framework' },
+    { name: 'Tailwind CSS', icon: Palette, description: 'Utility-first CSS' },
+    { name: 'Node.js', icon: Database, description: 'Server-side runtime' },
+    { name: 'GSAP', icon: Zap, description: 'Animation library' }
+  ];
+
+  const portfolioItems = [
+    {
+      title: 'E-commerce Platform',
+      category: 'Web Development',
+      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: 'Modern e-commerce solution with advanced animations'
+    },
+    {
+      title: 'Mobile Banking App',
+      category: 'Mobile Development',
+      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: 'Secure and intuitive banking application'
+    },
+    {
+      title: 'SaaS Dashboard',
+      category: 'UI/UX Design',
+      image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: 'Analytics dashboard with real-time data visualization'
+    },
+    {
+      title: 'Brand Identity',
+      category: 'Branding',
+      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+      description: 'Complete brand identity and visual system'
     }
   ];
 
@@ -191,9 +256,11 @@ const Home = () => {
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-gradient-to-br from-blue-50 via-white to-purple-100">
         {/* Background Elements */}
         <div className="absolute inset-0">
-          <div className="floating-1 absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-2xl"></div>
-          <div className="floating-2 absolute top-40 right-20 w-32 h-32 bg-purple-400/20 rounded-full blur-2xl"></div>
-          <div className="floating-3 absolute bottom-40 left-1/4 w-24 h-24 bg-pink-400/20 rounded-full blur-2xl"></div>
+          <div className="floating-1 absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="floating-2 absolute top-40 right-20 w-40 h-40 bg-gradient-to-r from-purple-400/25 to-pink-400/25 rounded-full blur-3xl animate-float-slow"></div>
+          <div className="floating-3 absolute bottom-40 left-1/4 w-28 h-28 bg-gradient-to-r from-pink-400/30 to-blue-400/30 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="floating-4 absolute top-1/3 left-1/3 w-24 h-24 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-2xl animate-float"></div>
+          <div className="floating-5 absolute bottom-1/3 right-1/3 w-36 h-36 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-full blur-3xl animate-float-slow"></div>
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
@@ -221,7 +288,7 @@ const Home = () => {
             </motion.button>
             
             <motion.button
-              className="inline-flex items-center px-8 py-4 bg-white/70 backdrop-blur-sm text-slate-700 font-semibold rounded-full border border-blue-200 hover:bg-white hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 glass-card text-slate-700 font-semibold rounded-full hover:glass-card-strong hover:shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -249,11 +316,14 @@ const Home = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="feature-card bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                className="feature-card glass-card rounded-2xl p-6 hover:glass-card-strong hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 group"
                 whileHover={{ y: -5, scale: 1.02 }}
               >
-                <div className="mb-4">
-                  <feature.icon className="h-10 w-10 text-blue-600" />
+                <div className="mb-4 relative">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-lg blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
+                  <div className={`relative bg-gradient-to-r ${feature.color} p-3 rounded-lg w-fit`}>
+                    <feature.icon className="h-6 w-6 text-white" />
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">
                   {feature.title}
@@ -263,6 +333,102 @@ const Home = () => {
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Technologies We Master
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              We use the latest and most reliable technologies to build exceptional digital experiences
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {technologies.map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                className="glass-card rounded-xl p-4 text-center hover:glass-card-strong transition-all duration-300 group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.05 }}
+              >
+                <tech.icon className="h-8 w-8 text-blue-600 mx-auto mb-3 group-hover:text-purple-600 transition-colors duration-300" />
+                <h3 className="font-semibold text-slate-900 mb-1 text-sm">{tech.name}</h3>
+                <p className="text-xs text-slate-500">{tech.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Preview Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-50/30 to-purple-50/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Our Latest Work
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Explore some of our recent projects that showcase our expertise and creativity
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {portfolioItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                className="glass-card rounded-2xl overflow-hidden hover:glass-card-strong transition-all duration-300 group"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+                  <div className="absolute top-4 left-4">
+                    <span className="glass-card px-3 py-1 text-sm font-medium text-slate-700 rounded-full">
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-slate-600 mb-4">{item.description}</p>
+                  <motion.button
+                    className="inline-flex items-center text-blue-600 hover:text-purple-600 font-medium transition-colors duration-300"
+                    whileHover={{ x: 5 }}
+                  >
+                    View Project
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </motion.button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <motion.button
+              className="inline-flex items-center px-8 py-4 glass-card-strong text-slate-700 font-semibold rounded-full hover:shadow-lg transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View All Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </motion.button>
           </div>
         </div>
       </section>
@@ -283,7 +449,7 @@ const Home = () => {
             {stats.map((stat, index) => (
               <motion.div 
                 key={stat.label} 
-                className="stat-item text-center"
+                className="stat-item text-center glass-card rounded-2xl p-6 border-white/20"
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="text-4xl md:text-6xl font-bold text-white mb-2">
@@ -317,14 +483,21 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
-                className="bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="glass-card-strong rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 whileHover={{ y: -5 }}
               >
-                <Quote className="h-8 w-8 text-blue-600 mb-4" />
+                <div className="flex items-center justify-between mb-4">
+                  <Quote className="h-8 w-8 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
+                  <div className="flex space-x-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                </div>
                 <p className="text-slate-600 mb-6 leading-relaxed">
                   "{testimonial.content}"
                 </p>
@@ -340,6 +513,9 @@ const Home = () => {
                     </div>
                     <div className="text-slate-500 text-sm">
                       {testimonial.role}
+                    </div>
+                    <div className="text-blue-600 text-xs font-medium">
+                      {testimonial.company}
                     </div>
                   </div>
                 </div>
@@ -374,7 +550,7 @@ const Home = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </motion.button>
               <motion.button
-                className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 glass-card border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
