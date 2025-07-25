@@ -188,12 +188,12 @@ const Home = () => {
       className="min-h-screen"
     >
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-gradient-to-br from-blue-50 via-white to-purple-100">
         {/* Background Elements */}
         <div className="absolute inset-0">
-          <div className="floating-1 absolute top-20 left-10 w-20 h-20 bg-blue-400/30 rounded-full blur-xl"></div>
-          <div className="floating-2 absolute top-40 right-20 w-32 h-32 bg-purple-400/30 rounded-full blur-xl"></div>
-          <div className="floating-3 absolute bottom-40 left-1/4 w-24 h-24 bg-pink-400/30 rounded-full blur-xl"></div>
+          <div className="floating-1 absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-2xl"></div>
+          <div className="floating-2 absolute top-40 right-20 w-32 h-32 bg-purple-400/20 rounded-full blur-2xl"></div>
+          <div className="floating-3 absolute bottom-40 left-1/4 w-24 h-24 bg-pink-400/20 rounded-full blur-2xl"></div>
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
@@ -221,7 +221,7 @@ const Home = () => {
             </motion.button>
             
             <motion.button
-              className="inline-flex items-center px-8 py-4 bg-white/80 backdrop-blur-sm text-slate-700 font-semibold rounded-full border border-slate-200 hover:bg-white hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-white/70 backdrop-blur-sm text-slate-700 font-semibold rounded-full border border-blue-200 hover:bg-white hover:shadow-lg transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -249,7 +249,7 @@ const Home = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="feature-card bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                className="feature-card bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
                 whileHover={{ y: -5, scale: 1.02 }}
               >
                 <div className="mb-4">
@@ -302,7 +302,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-50/50 to-purple-50/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
@@ -317,7 +317,7 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -350,7 +350,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-slate-900 to-slate-800">
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -366,7 +366,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full hover:shadow-2xl hover:shadow-white/25 transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -374,7 +374,7 @@ const Home = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </motion.button>
               <motion.button
-                className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-slate-900 transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

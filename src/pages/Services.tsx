@@ -219,42 +219,42 @@ const Services = () => {
       className="min-h-screen pt-16"
     >
       {/* Hero Section */}
-      <section className="py-20 px-4 text-center">
+      <section className="py-20 px-4 text-center bg-gradient-to-br from-blue-50 via-white to-purple-100">
         <div className="max-w-4xl mx-auto">
-          <h1 className="services-hero-title text-5xl md:text-6xl font-bold text-white mb-6">
-            Our <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Services</span>
+          <h1 className="services-hero-title text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+            Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Services</span>
           </h1>
-          <p className="services-hero-text text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+          <p className="services-hero-text text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
             Comprehensive digital solutions that drive growth and deliver exceptional user experiences
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-12 px-4">
+      <section className="py-12 px-4 bg-gradient-to-br from-blue-50/30 to-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
-                className="service-card bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
+                className="service-card bg-white/70 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
                 whileHover={{ y: -5, scale: 1.02 }}
               >
                 <div className="mb-4">
-                  <service.icon className="h-12 w-12 text-purple-400" />
+                  <service.icon className="h-12 w-12 text-blue-600" />
                 </div>
                 
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-300 mb-4">
+                <p className="text-slate-600 mb-4">
                   {service.description}
                 </p>
                 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-300">
+                    <li key={idx} className="flex items-center text-sm text-slate-600">
                       <Check className="h-4 w-4 text-green-400 mr-2 flex-shrink-0" />
                       {feature}
                     </li>
@@ -262,11 +262,11 @@ const Services = () => {
                 </ul>
                 
                 <div className="flex items-center justify-between">
-                  <div className="text-2xl font-bold text-purple-400">
+                  <div className="text-2xl font-bold text-blue-600">
                     {service.price}
                   </div>
                   <motion.button
-                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-white font-medium rounded-lg hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300"
+                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -281,11 +281,11 @@ const Services = () => {
       </section>
 
       {/* Process Section */}
-      <section className="process-section py-20 px-4 bg-gradient-to-r from-slate-900/50 to-purple-900/30">
+      <section className="process-section py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Our Process</h2>
-            <p className="text-xl text-gray-300">How we bring your vision to life</p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Our Process</h2>
+            <p className="text-xl text-slate-600">How we bring your vision to life</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -298,10 +298,10 @@ const Services = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold text-xl rounded-full mb-4">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-slate-600">
                   {step.description}
                 </p>
               </motion.div>
@@ -311,11 +311,11 @@ const Services = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="pricing-section py-20 px-4">
+      <section className="pricing-section py-20 px-4 bg-gradient-to-br from-blue-50/50 to-purple-50/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Pricing Plans</h2>
-            <p className="text-xl text-gray-300">Choose the perfect plan for your needs</p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Pricing Plans</h2>
+            <p className="text-xl text-slate-600">Choose the perfect plan for your needs</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -324,28 +324,28 @@ const Services = () => {
                 key={plan.name}
                 className={`pricing-card relative bg-white/5 backdrop-blur-md border rounded-2xl p-8 ${
                   plan.popular 
-                    ? 'border-purple-400 scale-105' 
-                    : 'border-white/10'
+                    ? 'border-blue-300 scale-105 bg-white/90' 
+                    : 'border-blue-100 bg-white/70'
                 }`}
                 whileHover={{ scale: plan.popular ? 1.08 : 1.05 }}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium">
                       Most Popular
                     </span>
                   </div>
                 )}
                 
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                  <div className="text-4xl font-bold text-purple-400 mb-2">{plan.price}</div>
-                  <p className="text-gray-300">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">{plan.price}</div>
+                  <p className="text-slate-600">{plan.description}</p>
                 </div>
                 
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-gray-300">
+                    <li key={idx} className="flex items-center text-slate-600">
                       <Check className="h-5 w-5 text-green-400 mr-3 flex-shrink-0" />
                       {feature}
                     </li>
@@ -355,8 +355,8 @@ const Services = () => {
                 <motion.button
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
                     plan.popular
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-2xl hover:shadow-purple-500/25'
-                      : 'bg-white/10 text-white hover:bg-white/20'
+                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-2xl hover:shadow-blue-500/25'
+                      : 'bg-blue-100 text-blue-700 hover:bg-blue-200'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}

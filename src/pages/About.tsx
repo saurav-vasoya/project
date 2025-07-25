@@ -229,7 +229,7 @@ const About = () => {
       className="min-h-screen pt-16"
     >
       {/* Hero Section */}
-      <section className="py-20 px-4 text-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="py-20 px-4 text-center bg-gradient-to-br from-blue-50 via-white to-purple-100">
         <div className="max-w-4xl mx-auto">
           <h1 className="about-hero-title text-5xl md:text-6xl font-bold text-slate-900 mb-6">
             About{" "}
@@ -322,7 +322,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="values-section py-20 px-4 bg-slate-50">
+      <section className="values-section py-20 px-4 bg-gradient-to-br from-blue-50/30 to-purple-50/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
@@ -338,7 +338,7 @@ const About = () => {
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                className="value-card bg-white border border-slate-200 rounded-2xl p-8 text-center hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+                className="value-card bg-white/70 backdrop-blur-sm border border-blue-100 rounded-2xl p-8 text-center hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <div className="mb-4 flex justify-center">
@@ -416,7 +416,7 @@ const About = () => {
       {/* Timeline Section */}
       <section
         ref={timelineRef}
-        className="py-20 px-4 bg-gradient-to-br from-slate-50 to-blue-50"
+        className="py-20 px-4 bg-gradient-to-br from-blue-50/50 to-purple-50/50"
       >
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -445,7 +445,7 @@ const About = () => {
                   }`}
                 >
                   <motion.div
-                    className="bg-white border border-slate-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="text-3xl font-bold text-blue-600 mb-2">

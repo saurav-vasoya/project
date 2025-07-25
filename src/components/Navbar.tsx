@@ -41,7 +41,7 @@ const Navbar = () => {
     <motion.nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-2xl border-b border-slate-200' 
+          ? 'bg-white/80 backdrop-blur-xl shadow-lg border-b border-blue-100' 
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="nav-item relative px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-300"
+                  className="nav-item relative px-3 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors duration-300"
                 >
                   <motion.span
                     whileHover={{ scale: 1.05 }}
@@ -93,7 +93,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-             className="text-slate-600 hover:text-slate-900"
+             className="text-slate-700 hover:text-blue-600"
               whileTap={{ scale: 0.95 }}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -107,7 +107,7 @@ const Navbar = () => {
         initial={false}
         animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-white/95 backdrop-blur-md border-b border-slate-200"
+        className="md:hidden overflow-hidden bg-white/90 backdrop-blur-xl border-b border-blue-100"
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navItems.map((item, index) => (
@@ -119,7 +119,7 @@ const Navbar = () => {
             >
               <Link
                 to={item.path}
-                className="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition-colors duration-300"
+                className="block px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

@@ -53,7 +53,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-slate-50 to-blue-50 border-t border-slate-200">
+    <footer className="relative bg-gradient-to-br from-white to-blue-50 border-t border-blue-100">
       {/* Scroll to top button */}
       <motion.button
         onClick={scrollToTop}
@@ -124,7 +124,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <motion.a
                       href={link.href}
-                      className="text-slate-600 hover:text-blue-600 transition-colors duration-300"
+                      className="text-slate-600 hover:text-blue-700 transition-colors duration-300"
                       whileHover={{ x: 5 }}
                     >
                       {link.name}
@@ -138,7 +138,7 @@ const Footer = () => {
 
         {/* Newsletter signup */}
         <motion.div
-          className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-12"
+          className="bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-8 mb-12 shadow-sm"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -155,7 +155,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="flex-1 px-4 py-3 rounded-lg border border-blue-200 bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <motion.button
                 className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
@@ -169,7 +169,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Bottom section */}
-        <div className="border-t border-slate-200 pt-8">
+        <div className="border-t border-blue-100 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <motion.div
               className="flex items-center text-slate-600 mb-4 md:mb-0"

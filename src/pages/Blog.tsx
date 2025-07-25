@@ -131,12 +131,12 @@ const Blog = () => {
       className="min-h-screen pt-16"
     >
       {/* Hero Section */}
-      <section className="py-20 px-4 text-center">
+      <section className="py-20 px-4 text-center bg-gradient-to-br from-blue-50 via-white to-purple-100">
         <div className="max-w-4xl mx-auto">
           <h1 className="blog-hero-title text-5xl md:text-6xl font-bold text-slate-900 mb-6">
             Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Blog</span>
           </h1>
-          <p className="blog-hero-text text-xl md:text-2xl  text-slate-600 max-w-3xl mx-auto">
+          <p className="blog-hero-text text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
             Insights, tutorials, and inspiration from the world of web design and animation
           </p>
         </div>
@@ -144,14 +144,14 @@ const Blog = () => {
 
       {/* Featured Post */}
       {featuredPost && (
-        <section className="featured-section py-12 px-4">
+        <section className="featured-section py-12 px-4 bg-gradient-to-br from-blue-50/30 to-purple-50/30">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Featured Post</h2>
             </div>
             
             <motion.article
-              className="featured-post bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden"
+              className="featured-post bg-white/80 backdrop-blur-sm border border-blue-100 rounded-3xl overflow-hidden shadow-lg"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -169,7 +169,7 @@ const Blog = () => {
                     {featuredPost.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full"
+                        className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full"
                       >
                         <Tag className="h-3 w-3 mr-1" />
                         {tag}
@@ -190,7 +190,7 @@ const Blog = () => {
                       <span>{new Date(featuredPost.date).toLocaleDateString()}</span>
                     </div>
                     <motion.button
-                      className="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                       whileHover={{ x: 5 }}
                     >
                       Read More
@@ -205,17 +205,17 @@ const Blog = () => {
       )}
 
       {/* Blog Grid */}
-      <section className="py-12 px-4">
+      <section className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Latest Posts</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Latest Posts</h2>
           </div>
           
           <div className="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularPosts.map((post) => (
               <motion.article
                 key={post.id}
-                className="blog-card bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300"
+                className="blog-card bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
                 whileHover={{ y: -5, scale: 1.02 }}
               >
                 <div className="relative h-48 overflow-hidden">
@@ -232,7 +232,7 @@ const Blog = () => {
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full"
+                        className="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full"
                       >
                         <Tag className="h-3 w-3 mr-1" />
                         {tag}
@@ -240,15 +240,15 @@ const Blog = () => {
                     ))}
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-white mb-3 line-clamp-2">
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 line-clamp-2">
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-300 mb-4 line-clamp-3">
+                  <p className="text-slate-600 mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between text-sm text-gray-400">
+                  <div className="flex items-center justify-between text-sm text-slate-500">
                     <div className="flex items-center">
                       <User className="h-4 w-4 mr-1" />
                       <span>{post.author}</span>
@@ -260,7 +260,7 @@ const Blog = () => {
                   </div>
                   
                   <motion.button
-                    className="w-full mt-4 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-white font-medium rounded-lg hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300"
+                    className="w-full mt-4 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
